@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+      :root {
+        --size: 35px;
+        --border: 4px;
+        --animation-time: 5s;
+        --active-border: #006ad0;
+        --innerSize: calc(var(--size) + 10px + var(--border));
+      }
+      .circle {
+        position: relative;
+        display: inline-block;
+        height: var(--size);
+        width: var(--size);
+        flex-shrink: 0;
+        border-radius: 50%;
+        border: var(--border) solid #e2e2e2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 0 var(--border) #fff;
+        background: #fff;
+        font-weight: bold;
+      }
+      .circle svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: var(--innerSize);
+        height: var(--innerSize);
+      }
+      circle {
+        fill: transparent;
+        stroke-width: var(--border);
+        transform: rotate(-90deg);
+        transform-origin: center;
+      }
+      @keyframes clock-animation {
+        0% {
+          stroke-dashoffset: 160;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      .lottie-animation h2{text-align: center;}
+      .slide.active .circle circle {
+        stroke-dasharray: 160;
+        stroke: var(--active-border);
+        animation: clock-animation var(--animation-time) linear forwards;
+      }
+      
+      .wrap{
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+      }
+      .slide {
+        display: flex;
+        gap: 20px;
+        padding: 10px 10px 20px 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+      .slide.active {
+        background: #f7f7f7;
+        margin-bottom: 30px;
+      }
+      .slide h3 {
+        color: #006ad0;
+        margin: 0;
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 700;
+      }
+      .slide p {
+        margin: 10px 0 0;
+        max-width: 408px;
+        display: none;
+      }
+      .slide.active p {
+        display: block;
+        transition: all 3s;
+      }
+      @media (min-width: 768px) {
+        .left {
+          width: 552px;
+          max-width: 50%;
+          flex-shrink: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="lottie-animation">
+      <div class="container">
+        <h2>Benutzerfreundlicher Lebenslauf-Generator mit großem Funktionsumfang</h2>
+      </div>
+      <div class="wrap">
+        <div class="left">&nbsp;</div>
+      <div class="right">
+        <div class="slide">
+          <span class="circle">1</span>
+          <div class="content">
+            <h3>Vorgefertigte Inhalte</h3>
+            <p>
+              Wir haben tausende von vorgefertigten Inhalten für hunderte von
+              Jobs und Branchen für Sie zur Auswahl. Sie müssen nur darauf
+              klicken, um sie in Ihren Lebenslauf einzufügen.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <span class="circle">2</span>
+          <div class="content">
+            <h3>Lebenslauf und Anschreiben im selben Look</h3>
+            <p>
+              Mit einem aufeinander abgestimmten Lebenslauf und Anschreiben
+              geben Sie Ihren Dokumenten mehr Persönlichkeit. Auch hier können
+              Sie sich auf Vorschläge von HR-Experten und professionelle
+              Anschreiben-Vorlagen verlassen, die optimal auf Ihren Lebenslauf
+              abgestimmt sind.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <span class="circle">3</span>
+          <div class="content">
+            <h3>Vorlagen mit professionellem Design</h3>
+            <p>
+              Unsere Vorlagen von HR-Experten durchlaufen mühelos alle
+              ATS-Systeme von Unternehmen, die Lebensläufe damit maschinell
+              auslesen.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <span class="circle">4</span>
+          <div class="content">
+            <h3>Tipps und Hilfe von Experten</h3>
+            <p>
+              Sie erhalten beim schrittweisen Erstellen Ihres Lebenslaufs
+              detaillierte Tipps. Egal, ob Sie schon lange im Berufsleben oder
+              erst am Anfang Ihrer Karriere stehen – wir haben die richtigen
+              Ratschläge für Sie.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <span class="circle">5</span>
+          <div class="content">
+            <h3>Lebenslauf-Schreibservice</h3>
+            <p>
+              Unsere Schreib-Experten für Lebensläufe sind für Sie da.
+              Beauftragen Sie eine schnelle Prüfung oder ein neues Design.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <script>
+      const lottieAnimation = document.querySelector(".lottie-animation");
+      const lottiesUrls = [
+        "https://lottie.host/ac422563-5b0a-47d6-aa68-a4f857bdbaba/HMOWWNf9Ie.json",
+        "https://lottie.host/83a12b1b-a0a4-4fce-ad1a-cdec2b340547/z5kua8Zd90.json",
+        "https://lottie.host/9da17e73-8d92-4f6c-9ac4-c37942f34a02/O6wk8aWqDN.json",
+        "https://lottie.host/bbc01222-49c6-49aa-b562-d9c671410d8b/eJLgc0kwXr.json",
+        "https://lottie.host/0dcd21d1-87e2-4300-ba5e-8e3d1a8a519b/I6KpA9BAlg.json",
+      ];
+      
+      const runAnimation = (entries,obserer) => {
+        const setLottie = (src) => {
+          lottieAnimation.querySelector(
+            ".left"
+          ).innerHTML = `<lottie-player preload src=${src} background="transparent" speed="1" autoplay></lottie-player>`;
+        };
+
+        const slides = lottieAnimation.querySelectorAll(".slide");
+        slides[0].classList.add('active')
+        setLottie(lottiesUrls[0])
+        slides.forEach((li, index) => {
+          li.querySelector(
+            ".circle"
+          ).innerHTML+= `<svg><circle class="clock" cx="50%" cy="50%" r="23" /></svg>`;
+          li.onclick = (e) => {
+            slides.forEach((li) => li.classList.remove("active"));
+            li.classList.add("active");
+            setLottie(lottiesUrls[index]);
+          };
+          li.addEventListener("animationend", () => {
+            li.classList.remove("active");
+            if (li.nextElementSibling) {
+              li.nextElementSibling.classList.add("active");
+              setLottie(lottiesUrls[index + 1]);
+            } else {
+              slides[0].classList.add("active");
+              setLottie(lottiesUrls[0]);
+            }
+          });
+        });
+      };
+      const options = {
+        root:null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries)=>{
+       if(entries[0].isIntersecting){
+        runAnimation()
+        observer.unobserve(lottieAnimation)
+       }
+      }, options);
+      observer.observe(lottieAnimation);
+    </script>
+  </body>
+</html>
